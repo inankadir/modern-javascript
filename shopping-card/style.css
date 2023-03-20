@@ -12,3 +12,7 @@
     padding: 1rem;
     z-index: 1;
 }
+
+.shopping-cart-list .list-item{
+    margin-top: 1rem;
+}
