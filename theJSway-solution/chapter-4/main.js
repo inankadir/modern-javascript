@@ -30,4 +30,6 @@ for (let i = 1; i <= 10; i++) {
       console.log(`${i} is even`);
     }else console.log(`${i} is odd`);
   }
-  
+
+  /*3. Input Validation
+  Write a program that continues to ask*/
