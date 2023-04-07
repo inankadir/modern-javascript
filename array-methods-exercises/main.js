@@ -65,6 +65,54 @@ console.log(arr); //5,3,8,1 (not modified)
 //The function should only modify the array.It should not return anything.
 //For instance:
 
-let arr = [5, 3, 8, 1];
+let arr = [5, 2, 3, 4, 6, 8, 1, 0];
+
+function filterRangeInPlace(arr, a, b) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < || arr[i] > b) { // a ve b arasında olmayan değerleri bul
+            arr.splice(i, 1)  // dizi üzerinden çıkar
+            i--   // indis ayarlaması yap
+        }
+    }
+}
 filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
-alert(arr); // [3,1]
+console.log(arr); // [2,3,4,1]
+
+/*Bu kod, parametre olarak geçilen "arr" adlı diziyi "a" ve "b" arasında olmayan değerlerden 
+temizleyecektir. For döngüsü kullanarak dizinin tüm elemanlarını tek tek dolaşırız. 
+Eğer bir eleman "a" ve "b" aralığında değilse, splice() yöntemini kullanarak diziden çıkarırız 
+ve indis ayarlaması yaparak doğru indekslerde döngünün devam etmesini sağlarız. 
+Bu sayede dizi sadece orijinal dizide kalmak istenen değerlerle güncellenmiş olur. 
+Fonksiyon herhangi bir değer döndürmez, sadece orijinal diziyi günceller.
+
+"i--" ifadesi, döngü içinde kullanılan bir indis ayarlamasıdır. JavaScript'de "for" döngüsü, genellikle
+bir arttırma veya azaltma işlemi ile kullanılan bir indisin değerini güncellemek için kullanılır.
+
+Örneğin, aşağıdaki döngüde "i" değişkeni 0'dan 4'e kadar olan değerlerde arttırılır:
+
+for (var i = 0; i < 5; i++) {
+  console.log(i);
+}
+Bu durumda, "i++" ifadesi döngü her bir iterasyonunda "i" değişkenini 1 arttıracaktır.
+
+Ancak, "filterRangeInPlace" fonksiyonundaki durum biraz farklıdır. Eğer döngü içinde bir elemanı
+diziden çıkarırsak, dizi uzunluğu azalacaktır ve indeksler kaydırılacaktır. Bu durumda, 
+döngüyü sıradaki indise geçmek için arttırmak yerine azaltmamız gerekmektedir.
+
+Örneğin, aşağıdaki kodda "i--" ifadesi kullanılarak döngü içinde bir elemanın çıkarılması sonucu
+indisin azaltıldığı görülmektedir:
+
+var arr = [1, 2, 3, 4, 5];
+for (var i = 0; i < arr.length; i++) {
+  if (arr[i] % 2 === 0) {
+    arr.splice(i, 1);
+    i--; // dizi uzunluğu azaldığından indis azaltılır
+  }
+}
+console.log(arr); // [1, 3, 5]
+
+Bu durumda, eğer "arr" dizisindeki bir eleman çift ise, "splice()" yöntemi kullanılarak diziden 
+çıkarılır ve "i--" ifadesi ile döngü indisi azaltılır. Bu sayede, dizi uzunluğu azaldığından 
+dolayı doğru indislerde döngünün devam etmesi sağlanır.*/
+
+//
