@@ -115,4 +115,45 @@ Bu durumda, eğer "arr" dizisindeki bir eleman çift ise, "splice()" yöntemi ku
 çıkarılır ve "i--" ifadesi ile döngü indisi azaltılır. Bu sayede, dizi uzunluğu azaldığından 
 dolayı doğru indislerde döngünün devam etmesi sağlanır.*/
 
-//
+//4. Sort in decreasing order
+//importance : 4
+
+let arr =  [5, 2, 1, -10, 8];
+
+arr.sort((a, b) => b - a)
+
+console.log(arr);
+
+/*Bu örnekte, [5, 2, 8, 1, 6] değerlerine sahip arr adında bir dizi bulunmaktadır. Diziyi yerinde 
+sıralayan sort() metodunu kullanıyoruz ve bir karşılaştırma fonksiyonunu argüman olarak veriyoruz. 
+Karşılaştırma fonksiyonu, diziden a ve b adlı iki elemanı alır ve b - a ifadesinin sonucunu döndürür. 
+Bu, elemanların azalan düzende sıralanmasını sağlar, çünkü karşılaştırma fonksiyonu, b değeri a 
+değerinden küçük olduğunda negatif bir değer döndürerek, b'nin a'dan önce gelmesi gerektiğini belirtir.
+Sonuç olarak azalan düzende sıralanmış dizi [8, 6, 5, 2, 1] olacaktır, çünkü değerler en yüksekten en
+düşüğe doğru sıralanmıştır.*/
+
+//5. Copy and sort array
+//importance: 5
+//We have an array of string arr. We'd like to have a sorted copy of it, but keep arr unmodified.
+//Create a function copySorted(arr) that returns such a copy.
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+function copySorted(arr) {
+    return arr.slice().sort()
+}
+let sorted = copySorted(arr);
+console.log(sorted); //CSS,HTML,JavaScript
+console.log(arr); //HTML,CSS,JavaScript ( no changes
+
+/*Bu örnekte, copySorted() fonksiyonu, bir dizi olan arr'yı girdi olarak alır. Orijinal dizinin 
+yüzeyel bir kopyasını slice() metodunu kullanarak oluşturur. Ardından, sort() metodunu kullanarak 
+kopya diziyi varsayılan olarak artan düzende (alfabetik sıraya göre) sıralar. Son olarak, 
+sıralanmış kopya diziyi çıktı olarak döndürür ve orijinal dizi arr'yi değiştirmeden bırakır.
+Not: Eğer orijinal dizi arr, karmaşık nesneler veya iç içe diziler içeriyorsa, yüzeyel bir kopya 
+hâlâ aynı nesnelere veya dizilere referans edebilir ve bu nesnelere veya dizilere yapılan herhangi 
+bir değişiklik, hem orijinal dizide hem de kopya dizide yansıtılır. Bu tür durumlarda, iki dizinin 
+tamamen ayrı olduğundan emin olmak için orijinal dizinin derin bir kopyasını oluşturmanız gerekebilir.*/
+
+
+
