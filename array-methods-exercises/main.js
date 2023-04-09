@@ -155,5 +155,57 @@ hâlâ aynı nesnelere veya dizilere referans edebilir ve bu nesnelere veya dizi
 bir değişiklik, hem orijinal dizide hem de kopya dizide yansıtılır. Bu tür durumlarda, iki dizinin 
 tamamen ayrı olduğundan emin olmak için orijinal dizinin derin bir kopyasını oluşturmanız gerekebilir.*/
 
+//6. Create an extendable calculator 
+//importance: 5
+//Create a constructor function Calculator that creates "extendable" calculator objects.
+//The task consists of two parts.
+//First, implement the method calculate(str) that takes a string like "1+2" in the format "NUMBER 
+//operator NUMBER"(space-delimited) and returns the result.Should understand plus + and minus -.
+/*Bu JavaScript sorusu, "genişletilebilir" hesap makinesi nesneleri oluşturan bir yapıcı işlev 
+olan Calculator'ı oluşturmayı içerir. İşlem, iki kısımdan oluşur.
+İlk olarak, "NUMBER işlemci NUMBER" formatındaki bir dizeyi (boşlukla ayrılmış olarak) 
+alan ve sonucu döndüren calculate(str) metodunu uygulayın. Artı (+) ve eksi (-) işlemlerini anlamalıdır*/
 
+// Calculator yapıcı işlevi
+function Calculator() {
+    // calculate() metodunu hesaplamak için kullanılabilir
+    this.calculate = function (str) {
+      // Gelen dizeyi boşluklarla ayırarak sayı ve işlemci parçalarına ayır
+      const parts = str.split(' ');
+      const a = +parts[0]; // İlk sayıyı al ve sayıya dönüştür
+      const operator = parts[1]; // İşlemciyi al
+      const b = +parts[2]; // İkinci sayıyı al ve sayıya dönüştür
+  
+      let result = 0; // Sonucu saklamak için bir değişken
+  
+      // İşlemciye göre doğru matematiksel işlemi gerçekleştir
+      switch (operator) {
+        case '+':
+          result = a + b;
+          break;
+        case '-':
+          result = a - b;
+          break;
+        default:
+          console.log('Geçersiz işlemci: ' + operator);
+          break;
+      }
+  
+      return result; // Sonucu döndür
+    };
+    // Ekstra işlevler veya metodlar eklemek için extendable olarak kullanılabilir
+  }
+  
+  // Örnek kullanım
+  const calculator = new Calculator(); // Calculator nesnesi oluştur
+  console.log(calculator.calculate('5 + 10')); // Çıktı: 15
+  console.log(calculator.calculate('50 - 25')); // Çıktı: 25
 
+  /*Bu örnekte, Calculator yapıcı işlevi oluşturulur ve calculate() metodunu içerir. 
+  Bu metod, gelen dizeyi boşluklarla ayırarak sayı ve işlemci parçalarına böler. 
+  Ardından, sayıları ve işlemciyi kullanarak doğru matematiksel işlemi gerçekleştirir 
+  ve sonucu döndürür. switch ifadesi, işlemciye göre doğru işlemi gerçekleştirmek için 
+  kullanılır. Ek olarak, Calculator nesnesi, genişletilebilirlik için ekstra işlevler veya 
+  metodlar eklemek için kullanılabilir.*/
+
+  
