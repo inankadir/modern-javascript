@@ -206,6 +206,16 @@ function Calculator() {
   Ardından, sayıları ve işlemciyi kullanarak doğru matematiksel işlemi gerçekleştirir 
   ve sonucu döndürür. switch ifadesi, işlemciye göre doğru işlemi gerçekleştirmek için 
   kullanılır. Ek olarak, Calculator nesnesi, genişletilebilirlik için ekstra işlevler veya 
-  metodlar eklemek için kullanılabilir.*/
-
+  metodlar eklemek için kullanılabilir.
   
+  const a = +parts[0]; bu satırı biraz daha açıklarsak;
+Bu satır, parts adında bir diziden (str dizesini boşluklarla ayırarak oluşturulan dizi) ilk elemanı 
+(parts[0]) alır ve bunu sayıya (a) dönüştürür.
++ işareti, bir stringi sayıya dönüştürmek için JavaScript'te kullanılan bir tekli artı operatörüdür. 
+Yani, + işareti, hemen ardından gelen ifadeyi sayıya dönüştürerek sonuç olarak bir sayı döndürür.
+Örneğin, parts[0] dizesi "5" olsaydı, +parts[0] ifadesi bu dizesi sayıya dönüştürerek 5 sayısını elde 
+ederdi. Bu nedenle, const a = +parts[0]; satırı, parts dizisinin ilk elemanını (parts[0]) sayıya
+ dönüştürerek a adlı bir değişkene atar.Aynı dönüşüm, const b = +parts[2]; satırında da 
+ gerçekleştirilir, burada parts dizisinin üçüncü elemanı (parts[2]) sayıya dönüştürülerek b adlı 
+ bir değişkene atılır.*/
+
