@@ -28,4 +28,54 @@ body {
   height: 70px;
   border: none;
   background-color: #252525;
+  color: white;
+  text-align: right;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+button {
+  height: 50px;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #c4c4c4;
+  background-color: transparent;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+button:hover {
+  background-color: #eaeaea;
+}
+
+.clear {
+  background-color: #f0595f;
+  border-color: #b03353;
+  color: #ffff;
+}
+
+.clear:hover {
+  background-color: #f17377;
+}
+
+.equal-sign {
+  background-color: #2e86c0;
+  border-color: #337cac;
+  color: #fff;
+  height: 100%;
+  grid-area: 2/4/6/5;
+}
+
+.equal-sign:hover {
+  background-color: #4e9ed4;
+}
+
+.operator {
+  color: #337cac;
+}
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
 }
