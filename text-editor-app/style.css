@@ -40,7 +40,7 @@ body {
     height: 350px;
     overflow-wrap: break-word;
     padding: 30px;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 .floating-button {
