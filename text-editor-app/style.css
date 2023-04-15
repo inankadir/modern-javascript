@@ -42,3 +42,29 @@ body {
     padding: 30px;
     font-size: 20px;
 }
+
+.floating-button {
+    position: fixed;
+    background-color: tomato;
+    padding: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    bottom: 100px;
+    right: 60px;
+    box-shadow: 0rem 0.5rem 1rem rgb(0, 0, 0, 0.2);
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+}
+
+.floating-button:hover {
+    cursor: pointer;
+    background-color: rgb(192, 74, 53);
+    transform: rotate(360deg);
+
+}
+
+.floating-button > i {
+    margin-left: 8px;
+    margin-top: 8px;
+}
